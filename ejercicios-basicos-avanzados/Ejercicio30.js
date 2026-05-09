@@ -1,0 +1,30 @@
+//Ejercicio 30: Dada una lista de canciones con sus géneros, agrupar las canciones por género.
+
+const tracks = [
+  { title: 'Enter Sandman', genre: 'Metal' },
+  { title: 'Back in Black', genre: 'Rock' },
+  { title: 'Bohemian Rhapsody', genre: 'Rock' },
+  { title: 'Blinding Lights', genre: 'Pop' },
+  { title: 'Old Town Road', genre: 'Country' },
+  { title: 'Smells Like Teen Spirit', genre: 'Grunge' },
+  { title: 'Bad Guy', genre: 'Pop' },
+  { title: 'Thunderstruck', genre: 'Rock' },
+  { title: 'Hotel California', genre: 'Rock' },
+  { title: 'Stairway to Heaven', genre: 'Rock' }
+];
+
+const tracksByGenre = {};
+
+for (let i = 0; i < tracks.length; i++) {
+  const track = tracks[i];
+  const genre = track.genre;
+
+  if (!tracksByGenre[genre]) {
+    tracksByGenre[genre] = []; // Inicializa array si no existe
+  }
+
+  tracksByGenre[genre].push(track); // Agrega la canción al array correspondiente
+}
+
+console.log(tracksByGenre);
+
